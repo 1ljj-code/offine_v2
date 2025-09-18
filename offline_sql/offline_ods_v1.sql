@@ -1,3 +1,47 @@
-show databases;
+# seatunnel version 2.3.10
+# bigdata env CDH 6.3.2
 
-show tables ;
+# sync_mysql_to_hive_tbl_insurance_area.conf
+
+env {
+    parallelism = 2
+    job.mode = "BATCH"
+}
+
+source{
+    Jdbc {
+        url = "jdbc:mysql://192.168.200.30:3306/realtime_v1?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&useSSL=false&allowPublicKeyRetrieval=true"
+        driver = "com.mysql.cj.jdbc.Driver"
+        connection_check_timeout_sec = 100
+        user = "root"
+        password = "root/"
+        query = "select dic_code, dic_name, parent_code, create_time, operate_time, DATE_FORMAT(NOW(), '%Y%m%d') as ds from realtime_v1.base_dic"
+    }
+}
+
+transform {
+
+}
+
+sink {
+    Hive {
+        table_name = "bigdata_offline_v1_ws.ods_base_dic"
+        metastore_uri = "thrift://cdh02:9083"
+        hive.hadoop.conf-path = "/etc/hadoop/conf"
+        save_mode = "overwrite"
+        partition_by = ["ds"]
+        dynamic_partition = true
+        orc_compress = "SNAPPY"
+        tbl_properties = {
+            "external.table.purge" = "true"
+        }
+        fields = [
+            "dic_code",
+            "dic_name",
+            "parent_code",
+            "create_time",
+            "operate_time",
+            "ds"
+        ]
+    }
+}
