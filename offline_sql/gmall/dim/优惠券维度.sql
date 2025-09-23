@@ -24,7 +24,7 @@ EXTERNAL TABLE dim_coupon_full
 ) COMMENT '优惠券维度表'
     PARTITIONED BY (`dt` STRING)
     STORED AS ORC
-    LOCATION '/warehouse/gmall/dim/dim_coupon_full/'
+    LOCATION '/warehouse/gmall/dim/dim_coupon/'
     TBLPROPERTIES ('orc.compress' = 'snappy');
 
 
