@@ -1,4 +1,4 @@
-package common.utils;
+package com.stream.common.utils;
 
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.time.Time;
