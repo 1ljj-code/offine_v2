@@ -13,9 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 环境参数设置工具类
- * time: 2025/9/24 20:52 className: EnvironmentSettingUtils.java
+ * time: 2025/09/26 09:03 className: EnvironmentSettingUtils.java
  *
- * @author liaojianjun
+ * @author liao.jianjun
  * @version 1.0.0
  */
 public final class EnvironmentSettingUtils {

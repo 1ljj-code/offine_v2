@@ -14,13 +14,28 @@
         <module>custom-func</module>
     </modules>
 
-    <!--    <modules>-->
+<!--    <modules>-->
 <!--        <module>stream-common</module>-->
 <!--        <module>stream-realtime</module>-->
 <!--        <module>custom-func</module>-->
 <!--        <module>stream-deploy</module>-->
 <!--        <module>stream-ml</module>-->
 <!--    </modules>-->
+
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -291,8 +306,21 @@
             </dependency>
 
             <!-- mysql 相关依赖 结束 -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>2.11.12</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
+
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--      -->
+    <!--        </plugins>-->
+    <!--    </build>-->
 
     <build>
         <plugins>
@@ -344,7 +372,13 @@
                     </execution>
                 </executions>
             </plugin>
+
+<!--    -->
+
+
         </plugins>
+
+
         <!--负责处理项目资源文件并拷贝到输出目录-->
         <resources>
             <resource>
@@ -364,5 +398,6 @@
             </resource>
         </resources>
     </build>
+
 
 </project>

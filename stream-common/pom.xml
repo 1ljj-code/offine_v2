@@ -17,12 +17,28 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>cloudera</id>-->
+<!--            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
     <repositories>
+        <repository>
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
         <repository>
             <id>cloudera</id>
             <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
         </repository>
+        <repository>
+            <id>jboss</id>
+            <url>http://repository.jboss.com/nexus/content/groups/public</url>
+        </repository>
     </repositories>
+
 
     <dependencies>
 
@@ -122,6 +138,26 @@
             <artifactId>hadoop-client</artifactId>
             <version>${hadoop.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.58</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.3</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

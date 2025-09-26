@@ -7,11 +7,12 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Properties;
 
+
 /**
  * 配置文件工具类
- * time: 2025/9/24 20:53 className: ConfigUtils.java
+ * time: 2025/09/26 08:58 className: ConfigUtils.java
  *
- * @author liaojianjun
+ * @author liao.jianjun
  * @version 1.0.0
  */
 public final class ConfigUtils {
